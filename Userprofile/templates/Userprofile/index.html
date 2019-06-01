@@ -1,0 +1,17 @@
+{% extends 'Userprofile/base.html' %}
+
+{% block main %}
+<div class="alert alert-success" role="alert">
+  <h4 class="alert-heading">Welcome to the Capgemini Exam Portal!</h4>
+  {% if user.is_authenticated %}
+  <h2 class="alert-heading">Hello {{ user.username }}</h2>
+  <p>Please attend exam.If you have completed exam please see your progress in result</p>
+  <hr>
+  {% else %}
+  <h2 class="alert-heading">Hello candidate</h2>
+  <p>Please Register or Login</p>
+  <p class="mb-0">You need to take exam after login and result will be available in result session</p>
+  {% endif %}
+</div>
+
+{% endblock main %}

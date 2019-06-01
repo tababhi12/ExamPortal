@@ -1,0 +1,24 @@
+{% extends 'Userprofile/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<table class ='table'>
+<tr>
+    <th>Userid</th>
+    <th>Email</th>
+    <th>Phone Number</th>
+    <th>Rating</th>
+    <th>Feedback</th>
+    <th>Score</th>
+  </tr>
+<tr>
+    <td>{{ object.userid }}</td>
+    <td>{{object.email}}</td>
+    <td>{{object.phone}}</td>
+    <td>{{ object.rating }}</td>
+    <td>{{object.feedback}}</td>
+    <td>{{object.score}}</td>
+</tr>
+</table>
+{% endblock content %}

@@ -1,0 +1,28 @@
+{% extends 'Userprofile/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<table class = 'table'>
+
+<th>Username</th>
+<th>Email</th>
+<th>Status L1</th>
+<th>Feedback L1</th>
+<th>Status L2</th>
+<th>Feedback L2</th>
+{% for candidate in object_list %}
+<tr>
+    <td><a href = "/result/{{candidate.userid}}/">{{candidate.userid}}</a></td>
+    <td>{{candidate.email}}</td>
+    <td>{{candidate.status_l1}}</td>
+    <td>{{candidate.feedback_l1}}</td>
+    <td>{{candidate.status_l2}}</td>
+    <td>{{candidate.feedback_l2}}</td>
+{% empty %}
+    <li>No candidate yet.</li>
+</tr>
+{% endfor %}
+</table>
+
+{% endblock content %}
+
