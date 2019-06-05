@@ -1,0 +1,27 @@
+{% extends "Employeeprofile/employee_base.html" %}
+{% load crispy_forms_tags %}
+
+
+{% block main %}
+
+<table class ='table'>
+<tr>
+    <th>Question ID</th>
+    <th>Question</th>
+    <th>Choice A</th>
+    <th>Choice B</th>
+    <th>Choice C</th>
+    <th>Choice D</th>
+    <th>Answer</th>
+  </tr>
+<tr>
+    <td><a href = "{{ object.get_absolute_url }}">{{object.question_id}}</a></td>
+    <td>{{object.question}}</td>
+    <td>{{object.choice_a}}</td>
+    <td>{{object.choice_b}}</td>
+    <td>{{object.choice_c}}</td>
+    <td>{{object.choice_d}}</td>
+    <td>{{object.answer}}</td>
+</tr>
+</table>
+{% endblock main %}

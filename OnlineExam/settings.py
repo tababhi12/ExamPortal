@@ -39,8 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Userprofile',
     'Employeeprofile',
+    'HRprofile',
     'django_extensions',
     'crispy_forms',
+    'QuestionAnswer',
 ]
 
 MIDDLEWARE = [

@@ -1,0 +1,28 @@
+{% extends 'Employeeprofile\employee_base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<table class = 'table'>
+<th>Question ID</th>
+<th>Question</th>
+<th>Choice A</th>
+<th>Choice B</th>
+<th>Choice C</th>
+<th>Choice D</th>
+<th>Answer</th>
+{% for candidate in object_list %}
+<tr>
+    <td><a href = "{{ candidate.get_absolute_url }}">{{candidate.question_id}}</a></td>
+    <td>{{candidate.question}}</td>
+    <td>{{candidate.choice_a}}</td>
+    <td>{{candidate.choice_b}}</td>
+    <td>{{candidate.choice_c}}</td>
+    <td>{{candidate.choice_d}}</td>
+    <td>{{candidate.answer}}</td>
+{% empty %}
+    <li>No candidate yet.</li>
+</tr>
+{% endfor %}
+</table>
+
+{% endblock content %}
+

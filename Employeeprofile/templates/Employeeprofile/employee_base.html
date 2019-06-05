@@ -22,6 +22,8 @@
             <a class="nav-item nav-link" href="{% url 'employee_result' %}">Candidate List</a>
             <a class="nav-item nav-link" href="{% url 'employee_select' %}">Selected</a>
             <a class="nav-item nav-link" href="{% url 'employee_reject' %}">Rejected</a>
+            <a class="nav-item nav-link" href="{% url 'employee_createexam' %}">Create Exam</a>
+            <a class="nav-item nav-link" href="{% url 'question' %}">Questions</a>
             <a class="nav-item nav-link" href=" {% url 'employee_logout' %}">Logout</a>
         {% else %}
             <a class="nav-item nav-link" href="{% url 'employee_login' %}">Login</a>

@@ -1,0 +1,35 @@
+{% extends "Userprofile/base.html" %}
+{% load crispy_forms_tags %}
+
+  
+  {% block main %}
+  {% if not registered %}
+      <form method = 'post'>
+      {% csrf_token %}
+        <div class="alert alert-success" role="alert">
+          <h4 class="alert-heading">Welcome to the Exam Portal!</h4>
+          <h2 class="alert-heading">Hello {{ user.username }}</h2>
+          <p>There will be 10 question.Each will be having one correct answer.Score will be updated in your profile</p>
+          <button type = 'submit' class = 'btn btn-success center'>Proceed</button> 
+    </form>
+     {% endif %}
+  {% endblock main %}
+
+{% block content %}
+ {% if registered %}
+  <form method = 'post'>
+  {% csrf_token %}    
+      {% for query in queryset %}
+      <h1>Question:{{query.question}}</h1>
+      <h2>A: {{query.choice_a}}</h2>
+      <h2>B: {{query.choice_b}}</h2>
+      <h2>C: {{query.choice_c}}</h2>
+      <h2>D: {{query.choice_d}}</h2>
+      {{ form.answer_selected|as_crispy_field }}
+      {% endfor %}
+      <button type = 'submit' class = 'btn btn-success center'>Submit</button>
+      <input type="hidden" name="active" value="Yes">
+    </form>
+{% endif %}
+{% endblock content%}
+

@@ -1,0 +1,16 @@
+{% extends 'HRprofile/hr_base.html' %}
+
+{% block main %}
+<div class="alert alert-success" role="alert">
+  <h4 class="alert-heading">Welcome to the Capgemini Interview Portal!</h4>
+  {% if user.is_authenticated %}
+  <h2 class="alert-heading">Hello {{ user.username }}</h2>
+  <p>Please see candidate in Candidate List</p>
+  <hr>
+  {% else %}
+  <h2 class="alert-heading">Hello HR</h2>
+  <p>Please Register or Login</p>
+  {% endif %}
+</div>
+
+{% endblock main %}
