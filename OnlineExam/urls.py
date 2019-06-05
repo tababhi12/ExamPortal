@@ -57,7 +57,6 @@ urlpatterns = [
 
     path('employee/createexam',QuestionAnswerCreateView.as_view(),name = 'employee_createexam'),
     path('employee/question',QuestionAnswerListView.as_view(),name = 'question'),
-    # path('^employee/question/(?P<pk>\d+)/$',QuestionAnswerDetailView.as_view(),name = 'question_detail'),
     path('employee/question/(?P<pk>\d+)/update/$',QuestionAnswerUpdateView.as_view(),name = 'question_update'),
 
     
